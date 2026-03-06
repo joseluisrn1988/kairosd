@@ -219,3 +219,62 @@ footer {
     color: var(--secondary);
 }
 
+/* Estilos para la Sección del Problema */
+.problem-section {
+    padding: 80px 0;
+    background-color: var(--bg-light); /* El color #f4f7f6 que definimos antes */
+    text-align: center;
+}
+
+.problem-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.problem-badge {
+    display: inline-block;
+    background: rgba(26, 43, 76, 0.1); /* Color primario con transparencia */
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.problem-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.problem-content p {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    line-height: 1.8;
+}
+
+.problem-content strong {
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent); /* Subrayado verde en KairosD */
+}
+
+.problem-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 30px auto 0;
+    border-radius: 2px;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .problem-content h2 {
+        font-size: 1.8rem;
+    }
+    .problem-content p {
+        font-size: 1.1rem;
+    }
+}
