@@ -218,3 +218,39 @@ footer {
     border-top: 1px solid #eee;
     color: var(--secondary);
 }
+
+/* Estilos adicionales para completar la estrategia */
+.problem {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.problem-box {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    color: var(--secondary);
+    line-height: 1.8;
+}
+
+.service-summary-card {
+    background: var(--primary);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-summary-card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.service-summary-card:hover {
+    transform: scale(1.02);
+}
+
+.auth-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
