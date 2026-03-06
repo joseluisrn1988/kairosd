@@ -102,8 +102,10 @@ nav {
 
 .gradient-text {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Propiedad estándar */
+    -webkit-background-clip: text; /* Propiedad para Chrome/Safari */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente para ver el fondo */
+    color: transparent; /* Respaldo para otros navegadores */
 }
 
 .hero p {
