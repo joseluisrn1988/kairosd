@@ -1,31 +1,31 @@
-// Efecto de cambio de color en el header al hacer scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('#main-header');
-    if (window.scrollY > 50) {
-        header.style.padding = '10px 0';
-        header.style.background = '#ffffff';
-    } else {
-        header.style.padding = '20px 0';
+// Animación de aparición al hacer Scroll (Efecto Apple)
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
     }
+}
+
+window.addEventListener("scroll", reveal);
+
+// Carga inicial para el Hero
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        document.querySelector('.hero-content').classList.add('active');
+    }, 200);
 });
 
-// Animación de entrada suave para las tarjetas de servicios
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+// Suavizar navegación interna
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-}, observerOptions);
-
-document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
 });
