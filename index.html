@@ -1,618 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kairós Digital · Estrategia de Marca y Desarrollo Web a Medida</title>
-  <!-- Meta descripción SEO -->
-  <meta name="description" content="Agencia de branding y desarrollo web para PYMES en México. Estrategia de marca, páginas web a medida sin WordPress y acompañamiento real. ¡Diagnóstico gratis!">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://joseluisrn1988.github.io/kairedigital/">
-  <meta property="og:title" content="Kairós Digital · Estrategia de Marca y Desarrollo Web a Medida">
-  <meta property="og:description" content="Construimos marcas sólidas y herramientas digitales para PYMES. Diagnóstico gratis en 3 minutos.">
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/1a2b4c/2ecc71?text=Kairós+Digital">
-  <!-- Fuente moderna Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    /* RESET Y VARIABLES */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    :root {
-      --azul-profundo: #1a2b4c;
-      --verde-acento: #2ecc71;
-      --gris-azulado: #728197;
-      --blanco: #ffffff;
-      --gris-claro: #f8fafd;
-      --texto-oscuro: #13293D;
-      --sombra-suave: 0 20px 30px -10px rgba(26, 43, 76, 0.15);
-      --border-radius: 24px;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--texto-oscuro);
-      line-height: 1.5;
-      background-color: var(--blanco);
-      overflow-x: hidden;
-    }
-    h1, h2, h3 {
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 1.5rem;
-    }
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 1rem;
-    }
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    p {
-      font-size: 1.125rem;
-      color: #2d3a4f;
-      margin-bottom: 1.5rem;
-    }
-    a {
-      text-decoration: none;
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    /* BOTONES */
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.25s ease;
-      cursor: pointer;
-      border: none;
-      text-align: center;
-    }
-    .btn-primary {
-      background-color: var(--verde-acento);
-      color: var(--azul-profundo);
-      box-shadow: 0 8px 20px -6px rgba(46, 204, 113, 0.5);
-    }
-    .btn-primary:hover {
-      background-color: #27ae60;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 25px -8px rgba(46, 204, 113, 0.6);
-    }
-    .btn-outline {
-      background-color: transparent;
-      color: var(--blanco);
-      border: 2px solid var(--blanco);
-    }
-    .btn-outline:hover {
-      background-color: var(--blanco);
-      color: var(--azul-profundo);
-    }
-    /* HEADER (menú) */
-    header {
-      position: sticky;
-      top: 0;
-      background-color: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 50;
-      border-bottom: 1px solid rgba(114, 129, 151, 0.2);
-      padding: 1rem 0;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--azul-profundo);
-      line-height: 1;
-    }
-    .logo span {
-      color: var(--verde-acento);
-    }
-    .nav-menu {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .nav-menu a {
-      font-weight: 500;
-      color: var(--azul-profundo);
-      transition: color 0.2s;
-    }
-    .nav-menu a:hover {
-      color: var(--verde-acento);
-    }
-    .btn-diagnostico {
-      background-color: var(--azul-profundo);
-      color: var(--blanco);
-      padding: 0.6rem 1.5rem;
-      border-radius: 40px;
-      font-weight: 600;
-      border: 2px solid transparent;
-      transition: 0.2s;
-    }
-    .btn-diagnostico:hover {
-      background-color: transparent;
-      border-color: var(--azul-profundo);
-      color: var(--azul-profundo);
-    }
-    /* HERO con partículas */
-    .hero {
-      background-color: var(--azul-profundo);
-      color: var(--blanco);
-      padding: 5rem 0 7rem 0;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    #particles-js {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .hero h1 {
-      color: var(--blanco);
-    }
-    .hero p {
-      color: rgba(255,255,255,0.85);
-      font-size: 1.25rem;
-      max-width: 90%;
-    }
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      margin: 2rem 0 2.5rem 0;
-    }
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--verde-acento);
-    }
-    .stat-label {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 0.8;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    /* tarjetita flotante decorativa */
-    .hero-card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 32px;
-      padding: 2rem;
-      color: white;
-      box-shadow: var(--sombra-suave);
-    }
-    .hero-card small {
-      color: var(--verde-acento);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    .hero-card ul {
-      list-style: none;
-      margin-top: 1.5rem;
-    }
-    .hero-card li {
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .hero-card li::before {
-      content: "✓";
-      color: var(--verde-acento);
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    /* secciones generales */
-    section {
-      padding: 5rem 0;
-    }
-    .section-subtitle {
-      color: var(--verde-acento);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.5rem;
-    }
-    .bg-light {
-      background-color: var(--gris-claro);
-    }
-    /* tarjetas de servicios principales */
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .servicio-card {
-      background: var(--blanco);
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      box-shadow: var(--sombra-suave);
-      transition: transform 0.2s;
-      border: 1px solid #eef2f6;
-    }
-    .servicio-card:hover {
-      transform: scale(1.02);
-    }
-    .servicio-icon {
-      background-color: rgba(46, 204, 113, 0.1);
-      width: 60px;
-      height: 60px;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-      color: var(--verde-acento);
-    }
-    .precio {
-      font-weight: 700;
-      color: var(--azul-profundo);
-      font-size: 1.8rem;
-      margin: 1rem 0 1.5rem 0;
-    }
-    .precio small {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--gris-azulado);
-    }
-    /* Sección test rápido (destacada) */
-    .test-block {
-      background: var(--azul-profundo);
-      border-radius: var(--border-radius);
-      padding: 3.5rem;
-      color: var(--blanco);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 3rem;
-    }
-    .test-block h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .test-block p {
-      color: rgba(255,255,255,0.8);
-      max-width: 600px;
-    }
-    .test-block .btn-primary {
-      background-color: var(--blanco);
-      color: var(--azul-profundo);
-      box-shadow: none;
-    }
-    .test-block .btn-primary:hover {
-      background-color: var(--verde-acento);
-      color: var(--azul-profundo);
-    }
-    /* Quién soy (resumen) */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .about-highlight {
-      color: var(--verde-acento);
-      font-weight: 600;
-    }
-    .about-logros {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .logro-item {
-      background: white;
-      border-radius: 50px;
-      padding: 0.3rem 1.2rem;
-      border: 1px solid var(--gris-azulado);
-      font-weight: 500;
-      color: var(--azul-profundo);
-    }
-    /* Beneficios / Trust signals */
-    .beneficios-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin: 3rem 0;
-    }
-    .beneficio-item {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 20px;
-      text-align: center;
-      border: 1px solid #eef2f6;
-    }
-    .beneficio-num {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--verde-acento);
-    }
-    /* CTA final */
-    .cta-final {
-      background: linear-gradient(145deg, var(--azul-profundo) 0%, #10213b 100%);
-      border-radius: var(--border-radius);
-      padding: 4rem;
-      text-align: center;
-      color: white;
-    }
-    .cta-final h2 {
-      color: white;
-    }
-    .cta-final .btn-primary {
-      background-color: var(--blanco);
-      color: var(--azul-profundo);
-      margin-top: 2rem;
-      font-size: 1.2rem;
-      padding: 1.2rem 3rem;
-    }
-    /* footer sencillo */
-    footer {
-      background-color: var(--gris-claro);
-      padding: 2rem 0;
-      border-top: 1px solid #d9e0e9;
-      text-align: center;
-      color: var(--gris-azulado);
-    }
-    /* responsive */
-    @media (max-width: 900px) {
-      .hero-grid, .servicios-grid, .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .hero-stats {
-        justify-content: space-between;
-      }
-      .beneficios-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .test-block {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
-      .header-inner {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .nav-menu {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-    @media (max-width: 600px) {
-      .beneficios-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-ctas {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .btn {
-        text-align: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KairosD | Ingeniería Digital & Branding</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Kairós<span>Digital</span></a>
-      <nav class="nav-menu">
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="#" class="btn-diagnostico">Diagnóstico gratis</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO CON PARTÍCULAS -->
-  <section class="hero" id="hero">
-    <div id="particles-js"></div>
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <h1>Estrategia de Marca y Desarrollo Web a Medida para PYMES</h1>
-          <p>Dejamos atrás la improvisación. Construimos juntos una marca sólida y las herramientas digitales que necesitas para vender más, con acompañamiento real y estrategias basadas en datos.</p>
-          <div class="hero-stats">
-            <div class="stat-item"><span class="stat-number">259+</span><span class="stat-label">activos diseñados</span></div>
-            <div class="stat-item"><span class="stat-number">43+</span><span class="stat-label">Pymes asesoradas</span></div>
-            <div class="stat-item"><span class="stat-number">12+</span><span class="stat-label">sectores</span></div>
-          </div>
-          <div class="hero-ctas">
-            <a href="#" class="btn btn-primary">Diagnóstico GRATIS en 3 min</a>
-            <a href="#servicios" class="btn btn-outline">Ver servicios</a>
-          </div>
+    <header id="navbar">
+        <nav class="container">
+            <div class="logo">KAIROS<span>D</span></div>
+            
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html" class="btn-apple">Cotizar Proyecto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content reveal">
+                    <span class="badge">Desarrollo Web & Branding</span>
+                    <h1>Páginas Web a Medida y <br><span class="gradient-text">Branding de Alto Impacto.</span></h1>
+                    <p>Sin plantillas. Sin límites. Desarrollamos soluciones digitales únicas y marcas robustas.</p>
+                    <div class="cta-group">
+                        <a href="servicios.html" class="btn-main">Ver Soluciones</a>
+                        <a href="contacto.html" class="btn-link">Cotizar Proyecto →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem">
+            <div class="container">
+                <div class="glass-card reveal">
+                    <h2>¿Cansado de páginas lentas y logos genéricos?</h2>
+                    <p>En <strong>KairosD</strong> eliminamos las plantillas de WordPress para entregarte un sitio rápido, seguro y una identidad visual que represente la ingeniería de tu negocio.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-summary container">
+            <div class="service-grid">
+                <div class="service-card reveal">
+                    <h3>Desarrollo Web Nativo</h3>
+                    <p>Desde Landing Pages hasta sistemas complejos. Enfoque total en velocidad, seguridad y SEO.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Branding e Identidad</h3>
+                    <p>Construimos la imagen de tu empresa. Logotipos locales e identidad visual robusta para el sector industrial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features container">
+            <div class="feature-item reveal">
+                <div class="feature-icon">01</div>
+                <h4>0% Plantillas</h4>
+                <p>Código nativo optimizado para máxima velocidad.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">02</div>
+                <h4>ADN Industrial</h4>
+                <p>Entendemos procesos técnicos y de planta.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">03</div>
+                <h4>Diseño Vectorial</h4>
+                <p>Entregables de alta precisión técnica.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">04</div>
+                <h4>Conversión</h4>
+                <p>Herramientas que atraen clientes reales.</p>
+            </div>
+        </section>
+
+        <section class="authority">
+            <div class="container">
+                <div class="auth-grid">
+                    <div class="auth-text reveal">
+                        <h2>Experiencia Real.</h2>
+                        <p>Nuestro fundador ha liderado proyectos vinculados a:</p>
+                        <ul class="auth-list">
+                            <li>Plantas automotrices: <strong>BMW y Toyota.</strong></li>
+                            <li>Marcas de consumo: <strong>FEMSA y Santa Clara.</strong></li>
+                        </ul>
+                    </div>
+                    <div class="auth-quote reveal">
+                        <p>"En la industria, la precisión es ley. Aplicamos esa ingeniería a tu marca."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container reveal">
+                <h2>¿Listo para profesionalizarte?</h2>
+                <a href="contacto.html" class="btn-main">Iniciar Diagnóstico Gratuito</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 KairosD. Estrategia desde Guanajuato, México.</p>
         </div>
-        <div class="hero-card">
-          <small>PRÓXIMO LANZAMIENTO</small>
-          <h3 style="color:white; margin: 1rem 0 0.5rem;">Web a medida, sin WordPress</h3>
-          <p style="color:rgba(255,255,255,0.7);">Código limpio, rendimiento superior y total libertad de diseño.</p>
-          <ul>
-            <li>Landing pages desde $2,000</li>
-            <li>Sitios corporativos autoadministrables</li>
-            <li>E‑commerce con pasarelas</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- SECCIÓN BENEFICIOS (confianza) -->
-  <section class="bg-light">
-    <div class="container">
-      <p class="section-subtitle">Por qué confiar</p>
-      <h2>Beneficios de trabajar con nosotros</h2>
-      <div class="beneficios-grid">
-        <div class="beneficio-item"><span class="beneficio-num">1</span><br>Respuesta rápida</div>
-        <div class="beneficio-item"><span class="beneficio-num">2</span><br>Resultados medibles</div>
-        <div class="beneficio-item"><span class="beneficio-num">3</span><br>Acompañamiento real</div>
-        <div class="beneficio-item"><span class="beneficio-num">4</span><br>Complementación con IA</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS PRINCIPALES (dos pilares) -->
-  <section id="servicios">
-    <div class="container">
-      <p class="section-subtitle">Soluciones integrales</p>
-      <h2>Branding + Desarrollo web</h2>
-      <p>Ya sea que necesites definir tu esencia o construir la plataforma digital para mostrarla, tenemos un plan para ti.</p>
-      
-      <div class="servicios-grid">
-        <!-- Estrategia de marca -->
-        <div class="servicio-card">
-          <div class="servicio-icon">🎯</div>
-          <h3>Estrategia de Marca</h3>
-          <p>Brand strategy, identidad visual, voz de marca y manual corporativo.</p>
-          <div class="precio">$300 <small>MXN</small></div>
-          <a href="servicios.html#branding" class="btn-primary" style="display:inline-block; padding:0.7rem 1.8rem;">Ver paquetes</a>
-        </div>
-        <!-- Presencia Web -->
-        <div class="servicio-card">
-          <div class="servicio-icon">💻</div>
-          <h3>Presencia Web a Medida</h3>
-          <p>Landing pages, corporativos, e‑commerce y sistemas a medida (sin WordPress).</p>
-          <div class="precio">$2,000 <small>MXN</small></div>
-          <a href="servicios.html#desarrollo" class="btn-primary" style="display:inline-block; padding:0.7rem 1.8rem;">Ver paquetes</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEST RÁPIDO (captación) -->
-  <section class="bg-light">
-    <div class="container">
-      <div class="test-block">
-        <div>
-          <h3>¿No estás seguro de lo que necesita tu negocio?</h3>
-          <p>Responde nuestro test rápido (3 minutos) y obtén claridad sobre el siguiente paso para crecer.</p>
-        </div>
-        <a href="#" class="btn btn-primary">Hacer el test ahora →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUIÉN SOY (resumen fundador) -->
-  <section>
-    <div class="container about-grid">
-      <div>
-        <p class="section-subtitle">Detrás de Kairós</p>
-        <h2>Jose Luis Ramirez</h2>
-        <p class="about-highlight">Ing. Robótica · Estratega de marca · Desarrollador web</p>
-        <p>Mi carrera comenzó en Wellden de México: diseñé su identidad visual, desarrollé su sitio web y lo posicioné #1 en Google, logrando un incremento del 400% en contratos. Participé en proyectos como la Planta BMW o FEMSA.</p>
-        <div class="about-logros">
-          <span class="logro-item">Planta BMW</span>
-          <span class="logro-item">Fashion Mall</span>
-          <span class="logro-item">Acuario Altacia</span>
-          <span class="logro-item">FEMSA</span>
-        </div>
-        <p>Hoy ayudo a PYMES a profesionalizar su imagen y vender más con una estrategia de marca clara y herramientas digitales a medida.</p>
-        <a href="nosotros.html" class="btn-primary" style="display:inline-block; margin-top:1rem;">Conoce mi historia</a>
-      </div>
-      <div style="background-color: var(--gris-azulado); border-radius: var(--border-radius); height: 380px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; opacity:0.9; background-image: linear-gradient(145deg, var(--azul-profundo), var(--gris-azulado));">
-        <span>📸 foto JL</span>
-        <!-- Aquí puedes insertar tu fotografía real -->
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="bg-light">
-    <div class="container">
-      <div class="cta-final">
-        <h2>¿Listo para dejar de improvisar?</h2>
-        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 1.5rem auto;">Hablemos sin compromiso y diseñemos el primer paso para hacer crecer tu negocio con una marca sólida y herramientas digitales efectivas.</p>
-        <a href="contacto.html" class="btn btn-primary">Quiero una propuesta</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Kairós Digital · hola@kairedigital.mx · WhatsApp · <a href="#" style="color:var(--azul-profundo);">Aviso de privacidad</a></p>
-    </div>
-  </footer>
-
-  <!-- PARTICULAS (librería) -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    // Configuración de partículas (blancas sutiles sobre azul)
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#ffffff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.25, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.1 } },
-        size: { value: 2.5, random: true, anim: { enable: true, speed: 2, size_min: 0.2 } },
-        line_linked: { enable: false }, // sin líneas para un efecto más limpio
-        move: { enable: true, speed: 0.8, direction: 'none', random: true, straight: false, out_mode: 'out' }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'bubble' }, resize: true },
-        modes: { bubble: { distance: 150, size: 4, duration: 2, opacity: 0.4 } }
-      },
-      retina_detect: true
-    });
-  </script>
-  <!-- Pequeño ajuste para que el hero se vea completo -->
-  <style>
-    #particles-js canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none; /* para que no bloquee clicks */
-    }
-  </style>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
