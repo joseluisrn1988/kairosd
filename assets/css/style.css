@@ -85,13 +85,13 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; }
 
 /* Problem Section */
-.problem { padding: 80px 0; background: var(--apple-bg); }
+.problem { padding: 80px 0; background: white; }
 .glass-card { background: white; padding: clamp(2rem, 5vw, 4rem); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; }
 
 /* Grid de Servicios */
 .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding: 80px 0; }
 .service-card { 
-    background: white; 
+    background: var(--accent); 
     padding: 24px; /* Bajamos de 40px a 24px para que no se vea gigante con la imagen */
     border-radius: 24px; 
     border: 1px solid #e5e5e7; 
