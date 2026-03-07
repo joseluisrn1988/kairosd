@@ -73,7 +73,7 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 /* --- Nuevos estilos para imágenes de servicios --- */
 .service-image {
-    width: 100%;
+    width: 50%;
     /*height: 100px;  Altura fija para que todas las cards midan lo mismo */
     aspect-ratio: 1 / 1;
     margin-bottom: 24px;
