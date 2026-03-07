@@ -76,7 +76,7 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .glass-card { background: white; padding: clamp(2rem, 5vw, 4rem); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; }
 
 .tech-stack { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-.tech-stack img { width: 35px; height: 35px; filter: grayscale(100%); opacity: 0.6; transition: 0.4s; }
+.tech-stack img { width: 35px; height: 35px; filter: grayscale(0%); opacity: 1; transition: 0.4s; }
 .tech-stack img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.2); }
 
 /* --- SECCIÓN DE SERVICIOS --- */
