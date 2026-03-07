@@ -42,9 +42,16 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 
 /* Hero */
 /* Posicionamiento del lienzo de partículas */
-.hero {
+.hero { 
+    padding: 160px 0 80px; 
+    text-align: center; 
+    background: transparent; /* IMPORTANTE: Para ver el canvas detrás */
     position: relative;
-    overflow: hidden; /* Evita que las partículas se salgan */
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2; /* Esto pone el texto por encima de las partículas */
 }
 
 #particle-canvas {
