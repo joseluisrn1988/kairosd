@@ -97,3 +97,39 @@ footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color:
 /* Animaciones */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Contenedor de logos tecnológicos */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre logos */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para que en móviles se acomoden si no caben */
+}
+
+.tech-stack img {
+    width: 35px; /* Tamaño pequeño y elegante */
+    height: 35px;
+    filter: grayscale(100%); /* Efecto Apple: se ven grises por defecto */
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.tech-stack img:hover {
+    filter: grayscale(0%); /* Cobran color al pasar el mouse */
+    opacity: 1;
+    transform: scale(1.2); /* Pequeño salto visual */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+    .tech-stack {
+        gap: 15px;
+    }
+    .tech-stack img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
