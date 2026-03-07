@@ -303,3 +303,21 @@ footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color:
     }
     .manifesto-text h2 { font-size: 2rem; }
 }
+/* Asegura que el contenido del Hero siempre esté sobre las partículas */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2; /* Mayor que el z-index del canvas */
+    pointer-events: none; /* Permite que el mouse pase a través del contenedor... */
+}
+
+.hero-content-wrapper a, 
+.hero-content-wrapper button {
+    pointer-events: auto; /* ...pero que los botones sigan siendo clickeables */
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
