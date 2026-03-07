@@ -2,12 +2,13 @@
 const menuIcon = document.getElementById('menu-icon');
 const navLinks = document.getElementById('nav-links');
 
-menuIcon.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // Animación simple del icono
-    menuIcon.classList.toggle('toggle');
-});
-
+if (menuIcon) {
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Esto añade la animación de la "X"
+        menuIcon.classList.toggle('toggle');
+    });
+}
 // Cerrar menú al hacer clic en un enlace (Móvil)
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
