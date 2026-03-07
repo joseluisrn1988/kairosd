@@ -15,15 +15,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Efecto Scroll Reveal (Apple Style)
 const reveal = () => {
     const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach(el => {
+    reveals.forEach((el, index) => {
         const windowHeight = window.innerHeight;
         const elementTop = el.getBoundingClientRect().top;
         const elementVisible = 100;
+
         if (elementTop < windowHeight - elementVisible) {
-            el.classList.add("active");
+            // Si el elemento está en una rejilla (grid), le damos un retraso basado en su posición
+            if (el.parentElement.classList.contains('values-grid')) {
+                setTimeout(() => {
+                    el.classList.add("active");
+                }, index % 3 * 200); // 200ms de diferencia entre cada tarjeta
+            } else {
+                el.classList.add("active");
+            }
         }
     });
 };
