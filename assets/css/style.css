@@ -63,8 +63,37 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 
 /* Grid de Servicios */
 .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding: 80px 0; }
-.service-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #e5e5e7; transition: 0.4s; }
+.service-card { 
+    background: white; 
+    padding: 24px; /* Bajamos de 40px a 24px para que no se vea gigante con la imagen */
+    border-radius: 24px; 
+    border: 1px solid #e5e5e7; 
+    transition: 0.4s; 
+}
 .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+/* --- Nuevos estilos para imágenes de servicios --- */
+.service-image {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas las cards midan lo mismo */
+    margin-bottom: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--apple-bg); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
 
 /* Features */
 .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding: 80px 0; }
