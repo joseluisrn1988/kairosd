@@ -1,31 +1,34 @@
-// Animación de aparición al hacer Scroll (Efecto Apple)
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
+// Manejo del Menú Móvil
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
+
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Animación simple del icono
+    menuIcon.classList.toggle('toggle');
+});
+
+// Cerrar menú al hacer clic en un enlace (Móvil)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Efecto Scroll Reveal (Apple Style)
+const reveal = () => {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
         if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
+            el.classList.add("active");
         }
-    }
-}
+    });
+};
 
 window.addEventListener("scroll", reveal);
 
-// Carga inicial para el Hero
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        document.querySelector('.hero-content').classList.add('active');
-    }, 200);
-});
-
-// Suavizar navegación interna
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+// Lanzar una vez al cargar
+document.addEventListener("DOMContentLoaded", reveal);
