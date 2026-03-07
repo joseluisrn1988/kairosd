@@ -3,19 +3,35 @@ const menuIcon = document.getElementById('menu-icon');
 const navLinks = document.getElementById('nav-links');
 
 if (menuIcon) {
-    menuIcon.addEventListener('click', () => {
+    menuIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
-        // Esto añade la animación de la "X"
         menuIcon.classList.toggle('toggle');
     });
 }
-// Cerrar menú al hacer clic en un enlace (Móvil)
+
+// Cerrar menú al hacer clic en un enlace
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+    link.addEventListener('click', (e) => {
+        // Solo cerrar si el menú está visible (móvil)
+        if (window.innerWidth <= 850) {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('toggle');
+        }
     });
 });
 
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 850) {
+        if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('toggle');
+        }
+    }
+});
+
+// Animación de scroll reveal
 const reveal = () => {
     const reveals = document.querySelectorAll(".reveal");
     reveals.forEach((el, index) => {
@@ -24,11 +40,10 @@ const reveal = () => {
         const elementVisible = 100;
 
         if (elementTop < windowHeight - elementVisible) {
-            // Si el elemento está en una rejilla (grid), le damos un retraso basado en su posición
-            if (el.parentElement.classList.contains('values-grid')) {
+            if (el.parentElement?.classList.contains('values-grid')) {
                 setTimeout(() => {
                     el.classList.add("active");
-                }, index % 3 * 200); // 200ms de diferencia entre cada tarjeta
+                }, index % 3 * 200);
             } else {
                 el.classList.add("active");
             }
@@ -37,6 +52,5 @@ const reveal = () => {
 };
 
 window.addEventListener("scroll", reveal);
-
-// Lanzar una vez al cargar
+window.addEventListener("resize", reveal);
 document.addEventListener("DOMContentLoaded", reveal);
