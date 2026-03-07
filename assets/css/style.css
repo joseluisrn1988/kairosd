@@ -111,7 +111,7 @@ footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color:
 .tech-stack img {
     width: 35px; /* Tamaño pequeño y elegante */
     height: 35px;
-    filter: grayscale(100%); /* Efecto Apple: se ven grises por defecto */
+    filter: grayscale(1%); /* Efecto Apple: se ven grises por defecto */
     opacity: 0.6;
     transition: all 0.4s ease;
 }
