@@ -73,7 +73,7 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 /* --- Nuevos estilos para imágenes de servicios --- */
 .service-image {
-    width: 200%;
+    width: 100%;
     height: 100px; /* Altura fija para que todas las cards midan lo mismo */
     margin-bottom: 24px;
     border-radius: 16px;
@@ -87,7 +87,7 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .service-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Recorta la imagen para que llene el espacio sin deformarse */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
     transition: transform 0.5s ease;
 }
 
