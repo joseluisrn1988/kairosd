@@ -74,11 +74,11 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 /* --- Nuevos estilos para imágenes de servicios --- */
 .service-image {
     width: 200%;
-    height: 200px; /* Altura fija para que todas las cards midan lo mismo */
+    height: 100px; /* Altura fija para que todas las cards midan lo mismo */
     margin-bottom: 24px;
     border-radius: 16px;
     overflow: hidden;
-    background-color: var(--apple-bg); 
+    background-color: white; 
     display: flex;
     justify-content: center;
     align-items: center;
