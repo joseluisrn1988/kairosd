@@ -129,7 +129,30 @@ nav { height: 64px; display: flex; justify-content: space-between; align-items: 
 .auth-list { list-style: none; margin-top: 24px; }
 .auth-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .auth-quote { background: rgba(255,255,255,0.05); padding: 32px; border-radius: 24px; font-style: italic; }
-.final-cta { padding: 100px 0; text-align: center; }
+/* --- FINAL CTA MEJORADO --- */
+.final-cta { 
+    padding: 120px 0; 
+    text-align: center; 
+}
+
+.final-cta .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Crea el espacio necesario entre el texto y el botón */
+}
+
+.final-cta h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 0; /* Quitamos margen extra para que el gap mande */
+}
+
+.final-cta .btn-main {
+    display: inline-block; /* Importante para que respete los espacios */
+}
 footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color: var(--secondary); font-size: 0.9rem; }
 
 /* --- ANIMACIONES & MÓVIL --- */
