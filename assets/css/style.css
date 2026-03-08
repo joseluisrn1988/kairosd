@@ -620,7 +620,7 @@ footer {
 }
 
 .logo-display {
-    background: var(--apple-bg);
+    background: white;
     padding: 80px;
     border-radius: 40px;
     text-align: center;
