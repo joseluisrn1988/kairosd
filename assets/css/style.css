@@ -630,6 +630,18 @@ footer {
     font-size: 3rem; 
 }
 
+.logo-img {
+    max-width: 250px; /* Ajusta este ancho según el diseño de tu logo */
+    height: auto;     /* Mantiene la proporción */
+    display: block;
+    margin: 0 auto 20px; /* Lo centra y le da espacio respecto a la tagline */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse (opcional, estilo Apple) */
+.logo-display:hover .logo-img {
+    transform: scale(1.02);
+}
 .tagline { 
     margin-top: 15px; 
     font-weight: 700; 
@@ -938,6 +950,14 @@ strong {
         margin: 20px 0;
         padding: 20px;
         width: 100%;
+    }
+
+    .logo-img {
+        max-width: 180px; /* Más pequeño en celulares para que no sature */
+    }
+    
+    .logo-display {
+        padding: 40px 20px; /* Reducimos el espacio interno en móvil */
     }
 }
 
