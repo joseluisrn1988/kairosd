@@ -658,11 +658,11 @@ footer {
 }
 
 .impact-box {
-    margin-top: 30px;
-    padding: 25px;
+    background: var(--apple-bg); /* Fondo suave */
     border-left: 4px solid var(--accent);
-    background: rgba(46, 204, 113, 0.05);
-    border-radius: 0 20px 20px 0;
+    padding: 20px;
+    border-radius: 0 16px 16px 0;
+    font-size: 0.9rem;
 }
 
 .leader-profile { 
@@ -780,6 +780,42 @@ strong {
     margin: 0 0 60px 0; /* Quitamos el margen lateral (20px) que empujaba el contenido */
     padding: 40px 20px; /* El padding interno crea el espacio con el borde */
     width: 100%;
+}
+
+.about-text-area .lead {
+    font-size: clamp(1.1rem, 4vw, 1.4rem); /* Tamaño fluido */
+    line-height: 1.3;
+    margin-bottom: 25px;
+    color: var(--primary);
+    border-left: 3px solid var(--accent); /* Un toque visual de diseño Apple */
+    padding-left: 15px;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.about-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.about-feature-item .dot {
+    min-width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
+.about-feature-item p {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin: 0; /* Quitamos márgenes de párrafos internos */
 }
 
 /* --- MEDIA QUERIES (MÓVIL) --- */
@@ -919,24 +955,20 @@ strong {
     }
 
     .about-grid-main {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
+        gap: 20px; /* Reducimos espacio entre logo y texto */
+        padding: 40px 0; /* Menos espacio muerto arriba y abajo */
     }
 
     /* Aseguramos que el área del logo no sea más ancha que la pantalla */
     .about-logo-area {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+        order: -1; /* El logo siempre arriba en móvil */
+        margin-bottom: 10px;
     }
 
     /* Ajustamos el área de texto para que respete los bordes */
-    .about-text-area {
-        width: 100%;
-        padding: 0; /* Quitamos paddings laterales que puedan sumar ancho */
+    .about-text-area h2 {
+        font-size: 1.7rem;
+        margin: 15px 0;
     }
 
     /* Reducimos el tamaño del título para que no fuerce el ancho */
@@ -957,8 +989,11 @@ strong {
     }
     
     .logo-display {
-        padding: 40px 20px; /* Reducimos el espacio interno en móvil */
+        padding: 30px; /* Menos aire en el logo para no empujar el texto muy abajo */
+        background: transparent; /* Opcional: para que se vea más integrado en móvil */
     }
+
+
 }
 
 @media (max-width: 900px) {
