@@ -771,23 +771,24 @@ strong {
     .nav-links {
         position: fixed;
         top: 64px;
-        left: 100%; /* Cambiamos de right a left para mejor control */
+        right: -110%; /* Cambiamos de right a left para mejor control */
         width: 100%;
         height: calc(100vh - 64px);
         flex-direction: column;
         background: white;
         padding: 40px;
-        transition: left 0.4s ease; /* Cambiamos a left */
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Cambiamos a left */
         display: flex;
         z-index: 999;
         box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-        /* Eliminamos visibility y opacity, confiamos en left */
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .nav-links.active {
-        left: 0; /* Ahora se desliza desde la izquierda */
-        /* El menú activo siempre debe tener prioridad */
-        z-index: 999;
+        right: 0; /* Ahora se desliza desde la izquierda */
+        visibility: visible;
+        pointer-events: auto;
     }
 
     /* Aseguramos que el body no pueda hacer scroll cuando el menú está abierto */
@@ -879,6 +880,9 @@ strong {
     }
 
     .hero {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
         padding: 120px 0 60px;
     }
 
