@@ -761,6 +761,15 @@ strong {
     font-weight: 800;
 }
 
+.authority-nosotros {
+    background: var(--apple-bg);
+    color: var(--text-dark);
+    border-radius: 30px; /* Reducido un poco para móvil */
+    margin: 0 0 60px 0; /* Quitamos el margen lateral (20px) que empujaba el contenido */
+    padding: 40px 20px; /* El padding interno crea el espacio con el borde */
+    width: 100%;
+}
+
 /* --- MEDIA QUERIES (MÓVIL) --- */
 @media (max-width: 850px) {
     .menu-icon {
