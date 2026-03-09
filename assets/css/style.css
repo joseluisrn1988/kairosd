@@ -626,6 +626,7 @@ footer {
     padding: 80px;
     border-radius: 40px;
     text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .logo-display .logo { 
@@ -642,7 +643,7 @@ footer {
 
 /* Efecto sutil al pasar el mouse (opcional, estilo Apple) */
 .logo-display:hover .logo-img {
-    transform: scale(1.02);
+    transform: scale(1.08);
 }
 .tagline { 
     margin-top: 15px; 
@@ -916,6 +917,7 @@ strong {
         padding: 40px 20px;
         width: 100%;
         border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
     /* Overlay para cuando el menú está abierto */
