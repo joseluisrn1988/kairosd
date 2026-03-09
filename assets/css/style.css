@@ -593,12 +593,12 @@ footer {
     padding: 40px;
     border-radius: 30px;
     transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
 .value-card:hover {
-    background: var(--secondary);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    background: var(--apple-bg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
     transform: translateY(-10px);
 }
 
