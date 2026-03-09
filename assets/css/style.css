@@ -589,15 +589,16 @@ footer {
 }
 
 .value-card {
-    background: var(--apple-bg);
+    background: white;
     padding: 40px;
     border-radius: 30px;
     transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
 }
 
 .value-card:hover {
-    background: var(--white);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    background: var(--secondary);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
     transform: translateY(-10px);
 }
 
@@ -781,7 +782,7 @@ strong {
 .authority-nosotros {
     background: var(--primary);
     color: var(--text-dark);
-    border-radius: 30px; /* Reducido un poco para móvil */
+    border-radius: 0 30px 30px 0; /* Reducido un poco para móvil */
     margin: 0 0 60px 0; /* Quitamos el margen lateral (20px) que empujaba el contenido */
     padding: 40px 20px; /* El padding interno crea el espacio con el borde */
     width: 100%;
