@@ -296,13 +296,14 @@ nav {
 /* --- SECCIÓN DE SERVICIOS --- */
 .services-summary{
     background-color: var(--white);
-    padding: 0 30px;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
 .service-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 32px; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 24px; 
     padding: 10px 0; 
 }
 
@@ -324,7 +325,7 @@ nav {
 }
 
 .service-image {
-    width: 70%; 
+    width: 80%; 
     aspect-ratio: 1 / 1; 
     border-radius: 20px;
     overflow: hidden; 
