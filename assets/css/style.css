@@ -324,12 +324,13 @@ nav {
 }
 
 .service-image {
-    width: 100%; 
+    width: 70%; 
     aspect-ratio: 1 / 1; 
     border-radius: 20px;
     overflow: hidden; 
     position: relative; 
     background-color: var(--white); 
+    margin: 0 auto 24px auto;
     display: flex; 
     justify-content: center; 
     align-items: center;
