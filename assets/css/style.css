@@ -477,7 +477,13 @@ padding: 20px;
 
 /* --- AUTHORITY & FOOTER --- */
 .authority { 
-    background: var(--accent); 
+    /* El degradado va PRIMERO, luego la URL de la imagen */
+    background: linear-gradient(rgba(26, 43, 76, 0.8), rgba(26, 43, 76, 0.8)), url('assets/img/webcode.png'); 
+    
+    background-size: cover;       /* Ajusta la foto para llenar todo el espacio */
+    background-position: center;  /* Centra la imagen */
+    background-attachment: fixed; /* Opcional: crea un efecto Parallax muy elegante */
+    
     color: white; 
     padding: 80px 0; 
 }
@@ -576,7 +582,7 @@ footer {
 .manifesto-text p {
     color: var(--secondary);
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .glass-box {
