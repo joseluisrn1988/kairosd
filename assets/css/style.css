@@ -296,7 +296,7 @@ nav {
 /* --- SECCIÓN DE SERVICIOS --- */
 .services-summary{
     background-color: var(--white);
-    padding: 10px 0;
+    padding: 30px 0;
     overflow: hidden;
 }
 
@@ -458,7 +458,9 @@ padding: 20px;
 }
 
 .feature-item:hover { 
-    transform: translateY(-5px); 
+    transform: translateY(20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.233);
+    border-radius: 20px;
 }
 
 .feature-item:hover .feature-line { 
