@@ -296,7 +296,7 @@ nav {
 /* --- SECCIÓN DE SERVICIOS --- */
 .services-summary{
     background-color: var(--white);
-    padding: 30px 40px;
+    padding: 0 30px;
 }
 
 .service-grid { 
@@ -326,7 +326,6 @@ nav {
 .service-image {
     width: 100%; 
     aspect-ratio: 1 / 1; 
-    margin-bottom: 24px; 
     border-radius: 20px;
     overflow: hidden; 
     position: relative; 
@@ -1016,7 +1015,6 @@ strong {
         padding: 30px; /* Menos aire en el logo para no empujar el texto muy abajo */
         background: transparent; /* Opcional: para que se vea más integrado en móvil */
     }
-
 
 }
 
