@@ -774,7 +774,7 @@ strong {
 }
 
 .authority-nosotros {
-    background: var(--apple-bg);
+    background: var(--primary);
     color: var(--text-dark);
     border-radius: 30px; /* Reducido un poco para móvil */
     margin: 0 0 60px 0; /* Quitamos el margen lateral (20px) que empujaba el contenido */
