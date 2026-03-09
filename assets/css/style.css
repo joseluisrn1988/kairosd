@@ -533,7 +533,8 @@ footer {
 }
 
 .manifesto { 
-    padding: 100px 0; 
+    padding: 50px;
+
 }
 
 .manifesto-grid {
@@ -577,6 +578,7 @@ footer {
     font-weight: 800;
     color: var(--accent);
     margin-bottom: 10px;
+    font-variant-numeric: tabular-nums; /* Mantiene los números alineados */
 }
 
 .values-grid {
@@ -666,7 +668,9 @@ footer {
 }
 
 .leader-profile { 
-    padding-bottom: 100px; 
+    padding-bottom: 100px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-radius: 30px;
 }
 
 .leader-header { 
